@@ -88,7 +88,7 @@ TARGET_USES_ION := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=none
+BOARD_KERNEL_CMDLINE := console=none androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += androidboot.hardware=shamu ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags
 BOARD_KERNEL_CMDLINE += utags.backup=/dev/block/platform/msm_sdcc.1/by-name/utagsBackup
@@ -116,6 +116,7 @@ TARGET_USES_INTERACTION_BOOST := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/1-004a/tsp"
 
 # Recovery
+BOARD_USES_FULL_RECOVERY_IMAGE := true
 BOARD_RAMDISK_USE_XZ := true
 TARGET_RECOVERY_FSTAB = device/moto/shamu/rootdir/etc/fstab.shamu
 
