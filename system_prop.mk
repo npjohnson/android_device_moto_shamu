@@ -85,6 +85,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.use_fifo_ui=1
 
+# IMS logging
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.ims.disableADBLogs=2 \
+    persist.ims.disableDebugLogs=1 \
+    persist.ims.disableIMSLogs=1 \
+    persist.ims.disableQXDMLogs=0
+
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=1
@@ -113,6 +120,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.max_virtual_display_dimension=2048
 
+# Rich Communications Service is disabled in 5.1
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.rcs.supported=0
+
 # Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=10 \
@@ -127,3 +138,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2017-10-01
+
+# Wi-Fi calling
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.iwlan.enable=true \
+    persist.radio.data_con_rprt=1 \
+    persist.radio.ignore_ims_wlan=1
